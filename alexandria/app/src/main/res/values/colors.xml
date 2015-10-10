@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Material palette -->
+    <color name="color_primary">#795548</color>
+    <color name="color_primary_dark">#5D4037</color>
+    <color name="color_accent">#FF5722</color>
+    <color name="color_primary_text">#212121</color>
+    <color name="color_divider">#B6B6B6</color>
+
+    <!-- Other colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="color_fab_pressed">#d63b0b</color>
+
+</resources>
