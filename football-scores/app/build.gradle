@@ -1,17 +1,24 @@
 apply plugin: 'com.android.application'
 
+//noinspection GroovyAssignabilityCheck
+def API_KEY = '"' + API_KEY + '"' ?: '"Missing the API key"';
+
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "barqsoft.footballscores"
-        minSdkVersion 10
-        targetSdkVersion 21
+        applicationId "com.ogasimli.footballscores"
+        minSdkVersion 11
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
+        all {
+            buildConfigField 'String', 'API_KEY', API_KEY
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -19,7 +26,42 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:cardview-v7:23.0.1'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:gridlayout-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support:support-annotations:23.0.1'
+
+    //ButterKnife
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+
+    //Ion
+    compile 'com.koushikdutta.ion:ion:2.1.6'
+
+    //Svg
+    compile 'com.caverock:androidsvg:1.2.1'
+
+    //Retrofit
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
+
+    //OkHttp
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+
+    //Joda Time
+    compile 'net.danlew:android.joda:2.8.2'
+
+    //Material Dialog
+    compile 'com.afollestad.material-dialogs:core:0.8.1.0@aar'
 }

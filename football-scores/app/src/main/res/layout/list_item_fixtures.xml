@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_view_corner_radius"
+        app:cardElevation="0.1dp"
+        android:foreground="?attr/selectableItemBackground">
+
+    <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            app:columnCount="3"
+            app:rowCount="2">
+
+        <!-- League Id -->
+        <TextView
+                android:id="@+id/league_and_match_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_league"
+                android:paddingBottom="4dp"
+                app:layout_gravity="fill"
+                android:gravity="center"
+                app:layout_columnSpan="3"
+                tools:text="Premier League\nMatch day 10"/>
+
+        <!-- Teams logos and scores -->
+        <ImageView
+                android:id="@+id/home_team_crest"
+                android:layout_width="@dimen/team_crest_width"
+                android:layout_height="@dimen/team_crest_height"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:layout_gravity="fill"
+                app:layout_columnWeight="1"
+                android:contentDescription="@string/description_home_team_crest"
+                tools:src="@drawable/placeholder_crest"/>
+
+        <TextView
+                android:id="@+id/match_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_score"
+                app:layout_gravity="fill"
+                app:layout_columnWeight="2"
+                tools:text="2 - 3"/>
+
+        <ImageView
+                android:id="@+id/away_team_crest"
+                android:layout_width="@dimen/team_crest_width"
+                android:layout_height="@dimen/team_crest_height"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:layout_gravity="fill"
+                app:layout_columnWeight="1"
+                android:contentDescription="@string/description_away_team_crest"
+                tools:src="@drawable/placeholder_crest"/>
+
+        <!-- Teams names -->
+        <TextView
+                android:id="@+id/home_team_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_team_names"
+                app:layout_gravity="fill"
+                android:gravity="center"
+                tools:text="Manchester City"/>
+
+
+        <TextView
+                android:id="@+id/match_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_gravity="fill"
+                tools:text="23:45"/>
+
+        <TextView
+                android:id="@+id/away_team_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_team_names"
+                android:gravity="center"
+                app:layout_gravity="fill"
+                tools:text="Chelsea"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_columnSpan="3"
+                android:src="@drawable/ic_action_share"
+                app:layout_gravity="fill"
+                android:contentDescription="@string/action_share"/>
+
+    </android.support.v7.widget.GridLayout>
+
+</android.support.v7.widget.CardView>
