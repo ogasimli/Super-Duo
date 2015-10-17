@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.ogasimli.footballscores.api.FootballDataService;
 import org.ogasimli.footballscores.api.GetTeamInformationResponse;
-import org.ogasimli.footballscores.data.DbContract;
+import org.ogasimli.footballscores.data.ScoresContract;
 import org.ogasimli.footballscores.data.ScoresProvider;
 import org.ogasimli.footballscores.object.Fixture;
 import org.ogasimli.footballscores.object.Team;
@@ -37,7 +37,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * Created by yehya khaled on 3/2/2015.
+ * Sync adapter class for fetching data
  */
 public class ScoresSyncAdapter extends AbstractThreadedSyncAdapter {
 
@@ -316,7 +316,7 @@ public class ScoresSyncAdapter extends AbstractThreadedSyncAdapter {
         Cursor cursor = getContext().getContentResolver().query(
                 ScoresProvider.TEAMS_URI,
                 null,
-                DbContract.TeamsTable.TEAM_CREST_URL + " = '' ",
+                ScoresContract.TeamsTable.TEAM_CREST_URL + " = '' ",
                 null,
                 null
         );

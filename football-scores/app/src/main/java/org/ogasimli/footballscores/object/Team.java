@@ -2,7 +2,7 @@ package org.ogasimli.footballscores.object;
 
 import com.google.gson.Gson;
 
-import org.ogasimli.footballscores.data.DbContract;
+import org.ogasimli.footballscores.data.ScoresContract;
 import org.ogasimli.footballscores.data.ScoresProvider;
 
 import android.content.ContentResolver;
@@ -10,7 +10,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 /**
- * Created by com.ogasimli on 11.10.2015.
+ * Object class for holding team information
  */
 public class Team {
 
@@ -32,7 +32,7 @@ public class Team {
 
     public static Team withId(ContentResolver contentResolver, String id) {
         String[] projection = null;
-        String selection = DbContract.TeamsTable.TEAM_ID + " = ? ";
+        String selection = ScoresContract.TeamsTable.TEAM_ID + " = ? ";
         String[] selectionArgs = new String[]{ id };
         String sortOrder = null;
 
@@ -53,18 +53,18 @@ public class Team {
 
     public static Team fromCursor(Cursor cursor) {
         Team team = new Team();
-        team.id = cursor.getString(cursor.getColumnIndex(DbContract.TeamsTable.TEAM_ID));
-        team.name = cursor.getString(cursor.getColumnIndex(DbContract.TeamsTable.TEAM_NAME));
-        team.crestUrl = cursor.getString(cursor.getColumnIndex(DbContract.TeamsTable.TEAM_CREST_URL));
+        team.id = cursor.getString(cursor.getColumnIndex(ScoresContract.TeamsTable.TEAM_ID));
+        team.name = cursor.getString(cursor.getColumnIndex(ScoresContract.TeamsTable.TEAM_NAME));
+        team.crestUrl = cursor.getString(cursor.getColumnIndex(ScoresContract.TeamsTable.TEAM_CREST_URL));
 
         return team;
     }
 
     public static void save(ContentResolver contentResolver, String id, String name, String crestUrl) {
         ContentValues teamValues = new ContentValues();
-        teamValues.put(DbContract.TeamsTable.TEAM_ID, id);
-        teamValues.put(DbContract.TeamsTable.TEAM_NAME, name);
-        teamValues.put(DbContract.TeamsTable.TEAM_CREST_URL, crestUrl);
+        teamValues.put(ScoresContract.TeamsTable.TEAM_ID, id);
+        teamValues.put(ScoresContract.TeamsTable.TEAM_NAME, name);
+        teamValues.put(ScoresContract.TeamsTable.TEAM_CREST_URL, crestUrl);
 
         contentResolver.insert(ScoresProvider.TEAMS_URI, teamValues);
     }

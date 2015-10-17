@@ -34,7 +34,8 @@
         <provider
                 android:name="org.ogasimli.footballscores.data.ScoresProvider"
                 android:authorities="com.ogasimli.footballscores"
-                tools:ignore="ExportedContentProvider"/>
+                android:exported="false"
+                android:syncable="true"/>
 
         <!-- Authenticator Service -->
         <service
@@ -43,7 +44,6 @@
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
-
             <meta-data
                     android:name="android.accounts.AccountAuthenticator"
                     android:resource="@xml/authenticator" />
@@ -53,11 +53,11 @@
         <service
                 android:name="org.ogasimli.footballscores.sync.ScoresSyncService"
                 android:exported="true"
-                android:process=":sync" tools:ignore="ExportedService">
+                android:process=":sync"
+                tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
-
             <meta-data
                     android:name="android.content.SyncAdapter"
                     android:resource="@xml/syncadapter" />
@@ -68,15 +68,14 @@
                 android:name="org.ogasimli.footballscores.widget.WidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.android.sunshine.app.ACTION_DATA_UPDATED" />
             </intent-filter>
-
             <meta-data
                     android:name="android.appwidget.provider"
                     android:resource="@xml/widget_info" />
         </receiver>
-
         <service
-                android:name="org.ogasimli.footballscores.widget.WidgetService"
+                android:name="org.ogasimli.footballscores.widget.WidgetRemoteViewsService"
                 android:permission="android.permission.BIND_REMOTEVIEWS"
                 android:exported="false" />
 

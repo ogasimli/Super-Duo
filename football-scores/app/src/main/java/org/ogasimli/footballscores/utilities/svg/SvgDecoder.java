@@ -1,4 +1,4 @@
-package org.ogasimli.footballscores.svg;
+package org.ogasimli.footballscores.utilities.svg;
 
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;

@@ -20,7 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by yehya khaled on 2/26/2015.
+ * Cursor adapter class
  */
 public class FixturesCursorAdapter extends CursorAdapter {
 
@@ -57,7 +57,7 @@ public class FixturesCursorAdapter extends CursorAdapter {
                 + context.getString(R.string.match_day) + ": " + fixtureAndTeam.matchDay;
         mHolder.leagueAndMatchDay.setText(leagueAndMatchDay);
         mHolder.matchTime.setText(fixtureAndTeam.matchTime);
-        mHolder.matchScore.setText(Utilities.getScores(fixtureAndTeam.homeTeamGoals,
+        mHolder.matchScore.setText(Utilities.getScores(context, fixtureAndTeam.homeTeamGoals,
                 fixtureAndTeam.awayTeamGoals));
 
         //Home team data

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- App name -->
     <string name="app_name">Football Scores</string>
 
     <!-- Actions -->
@@ -9,6 +10,12 @@
 
     <!-- Dialog fragment button text -->
     <string name="dialog_positive_button_text">OK</string>
+
+    <!-- Share intent title -->
+    <string name="share_intent_title">Result of the match</string>
+
+    <!-- String for match score -->
+    <string name="match_score" translatable="false">%1$s - %2$s</string>
 
     <!-- Dates -->
     <string name="today">Today</string>
@@ -29,17 +36,6 @@
     <string name="seria_a">Serie A</string>
     <string name="primera_liga">Primera Liga</string>
     <string name="eredivisie">Eredivisie</string>
-    
-    <!-- Days of week -->
-    <string-array name="days_of_week">
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
-    </string-array>
 
     <!-- About -->
     <string name="about_text">
@@ -66,9 +62,5 @@
     <string name="no_fixtures_for_day">No matches for this day.</string>
     <string name="description_away_team_crest">Away team\'s crest</string>
     <string name="description_home_team_crest">Home team\'s crest</string>
-    <string name="description_no_fixtures_for_day">Indicator showing that there are no matches for
-        this day
-    </string>
-    <string name="share_intent_title">Result of the match</string>
 
 </resources>

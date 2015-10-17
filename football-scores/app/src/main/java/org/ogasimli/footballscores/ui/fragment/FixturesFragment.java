@@ -2,7 +2,7 @@ package org.ogasimli.footballscores.ui.fragment;
 
 import com.ogasimli.footballscores.R;
 
-import org.ogasimli.footballscores.data.DbContract;
+import org.ogasimli.footballscores.data.ScoresContract;
 import org.ogasimli.footballscores.data.ScoresProvider;
 import org.ogasimli.footballscores.object.FixtureAndTeam;
 import org.ogasimli.footballscores.ui.adapter.FixturesCursorAdapter;
@@ -27,7 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by com.ogasimli on 11.10.2015.
+ * Fixtures fragment class
  */
 public class FixturesFragment extends Fragment
         implements LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
@@ -99,8 +99,8 @@ public class FixturesFragment extends Fragment
         return new CursorLoader(
                 getActivity(),
                 ScoresProvider.FIXTURES_AND_TEAMS_URI,
-                DbContract.FixturesAndTeamsView.projection,
-                DbContract.FixturesTable.DATE_COL + " = ?",
+                ScoresContract.FixturesAndTeamsView.projection,
+                ScoresContract.FixturesTable.DATE_COL + " = ?",
                 new String[]{Utilities.getDateMillisForQueryFormat(mDateMillis)},
                 null
         );

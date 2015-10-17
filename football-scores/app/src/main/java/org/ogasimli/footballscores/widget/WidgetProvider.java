@@ -20,40 +20,37 @@ import android.widget.RemoteViews;
 /**
  * Implementation of App Widget functionality.
  */
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class WidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+
+            // Create an Intent to launch MainActivity
+            Intent intent = new Intent(context, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+            remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
+
+            // Set up the collection
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+                setRemoteAdapter(context, remoteViews);
+            } else {
+                setRemoteAdapterV11(context, remoteViews);
+            }
+
+            Intent clickIntent = new Intent(context, MainActivity.class);
+            PendingIntent clickPendingIntent = TaskStackBuilder.create(context)
+                    .addNextIntentWithParentStack(clickIntent)
+                    .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+            remoteViews.setPendingIntentTemplate(R.id.fixtures_list, clickPendingIntent);
+            remoteViews.setEmptyView(R.id.fixtures_list, R.id.error_view);
+
+            // Tell the AppWidgetManager to perform an update on the current app widget
+            appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
         }
-    }
-
-    private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-
-        // Create an Intent to launch MainActivity
-        Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-        remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
-
-        // Set up the collection
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            setRemoteAdapter(context, remoteViews);
-        } else {
-            setRemoteAdapterV11(context, remoteViews);
-        }
-
-        Intent clickIntent = new Intent(context, MainActivity.class);
-        PendingIntent clickPendingIntent = TaskStackBuilder.create(context)
-                .addNextIntentWithParentStack(clickIntent)
-                .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-        remoteViews.setPendingIntentTemplate(R.id.fixtures_list, clickPendingIntent);
-        remoteViews.setEmptyView(R.id.fixtures_list, R.id.error_view);
-
-        // Tell the AppWidgetManager to perform an update on the current app widget
-        appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
     }
 
     @Override
@@ -75,7 +72,7 @@ public class WidgetProvider extends AppWidgetProvider {
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private static void setRemoteAdapter(Context context, @NonNull RemoteViews remoteViews) {
         remoteViews.setRemoteAdapter(R.id.fixtures_list,
-                new Intent(context, WidgetService.class));
+                new Intent(context, WidgetRemoteViewsService.class));
     }
 
     /**
@@ -86,6 +83,6 @@ public class WidgetProvider extends AppWidgetProvider {
     @SuppressWarnings("deprecation")
     private void setRemoteAdapterV11(Context context, @NonNull final RemoteViews remoteViews) {
         remoteViews.setRemoteAdapter(0, R.id.fixtures_list,
-                new Intent(context, WidgetService.class));
+                new Intent(context, WidgetRemoteViewsService.class));
     }
 }

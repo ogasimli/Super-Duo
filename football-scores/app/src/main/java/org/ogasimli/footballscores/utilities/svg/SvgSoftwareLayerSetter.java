@@ -1,4 +1,4 @@
-package org.ogasimli.footballscores.svg;
+package org.ogasimli.footballscores.utilities.svg;
 
 import android.annotation.TargetApi;
 import android.graphics.drawable.PictureDrawable;

@@ -4,9 +4,9 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
- * Created by yehya khaled on 2/25/2015.
+ * Database contract class
  */
-public class DbContract {
+public class ScoresContract {
 
     //Tables
     public static final String FIXTURES_TABLE = "fixtures_table";
@@ -26,10 +26,6 @@ public class DbContract {
     //URIs
     public static final String CONTENT_AUTHORITY = "com.ogasimli.footballscores";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
-
-    //Paths
-    public static final String FIXTURES_PATH = "fixtures";
-    public static final String TEAMS_PATH = "teams";
 
     //Tables definitions
     //Fixtures
@@ -52,6 +48,7 @@ public class DbContract {
 
     //Teams
     public static final class TeamsTable implements BaseColumns {
+
         //Columns
         public static final String TEAM_ID = "team_id";
         public static final String TEAM_NAME = "team_name";

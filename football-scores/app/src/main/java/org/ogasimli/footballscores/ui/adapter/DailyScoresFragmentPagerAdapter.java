@@ -2,6 +2,7 @@ package org.ogasimli.footballscores.ui.adapter;
 
 import com.ogasimli.footballscores.R;
 
+import org.joda.time.LocalDate;
 import org.ogasimli.footballscores.ui.fragment.FixturesFragment;
 import org.ogasimli.footballscores.utilities.Utilities;
 
@@ -10,8 +11,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import java.util.Locale;
+
 /**
- * Created by com.ogasimli on 10.10.2015.
+ * Pager adapter class managing tabs
  */
 public class DailyScoresFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -45,8 +48,9 @@ public class DailyScoresFragmentPagerAdapter extends FragmentStatePagerAdapter {
             case 3:
                 return mContext.getString(R.string.tomorrow);
             default:
-                return Utilities.translateDayOfWeek(mContext, Utilities.getLocalDateForItem
-                        (position));
+                LocalDate localDate = Utilities.getLocalDateForItem(position);
+                //DateTimeFormatter fmt = DateTimeFormat.forPattern("EEEE").withLocale(Locale.UK);
+                return localDate.dayOfWeek().getAsText(Locale.UK);
         }
     }
 }

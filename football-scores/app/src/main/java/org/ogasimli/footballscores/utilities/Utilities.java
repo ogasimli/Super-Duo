@@ -10,9 +10,9 @@ import com.ogasimli.footballscores.R;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.ogasimli.footballscores.svg.SvgDecoder;
-import org.ogasimli.footballscores.svg.SvgDrawableTranscoder;
-import org.ogasimli.footballscores.svg.SvgSoftwareLayerSetter;
+import org.ogasimli.footballscores.utilities.svg.SvgDecoder;
+import org.ogasimli.footballscores.utilities.svg.SvgDrawableTranscoder;
+import org.ogasimli.footballscores.utilities.svg.SvgSoftwareLayerSetter;
 
 import android.content.Context;
 import android.graphics.drawable.PictureDrawable;
@@ -22,7 +22,7 @@ import android.util.Log;
 import java.io.InputStream;
 
 /**
- * Created by yehya khaled on 3/3/2015.
+ * Utilities class holding helper methods
  */
 public class Utilities {
 
@@ -87,11 +87,16 @@ public class Utilities {
         }
     }
 
-    public static String getScores(int homeTeamGoals,int awayTeamGoals) {
-        if(homeTeamGoals < 0 || awayTeamGoals < 0)
-            return " - ";
-        else
-            return String.valueOf(homeTeamGoals) + " - " + String.valueOf(awayTeamGoals);
+    public static String getScores(Context context, int homeTeamGoals,int awayTeamGoals) {
+        String matchScore;
+        if (homeTeamGoals < 0 || awayTeamGoals < 0) {
+            matchScore = String.format(context.getResources().getString(R.string.match_score),
+                    " ", " ");
+        } else {
+            matchScore = String.format(context.getResources().getString(R.string.match_score),
+                    String.valueOf(homeTeamGoals), String.valueOf(awayTeamGoals));
+        }
+            return matchScore;
     }
 
     public static String getDateMillisForQueryFormat(long dateMillis) {
@@ -111,37 +116,6 @@ public class Utilities {
         Log.d(LOG_TAG, "Position: " + position + " / " + localDate.toString());
 
         return localDate;
-    }
-
-    public static String translateDayOfWeek(Context context, LocalDate localDate){
-        int dayOfWeek = localDate.getDayOfWeek();
-        String[] daysOfWeekText = context.getResources().getStringArray(R.array.days_of_week);
-
-        switch (dayOfWeek) {
-            case 1:
-                return daysOfWeekText[0];
-
-            case 2:
-                return daysOfWeekText[1];
-
-            case 3:
-                return daysOfWeekText[2];
-
-            case 4:
-                return daysOfWeekText[3];
-
-            case 5:
-                return daysOfWeekText[4];
-
-            case 6:
-                return daysOfWeekText[5];
-
-            case 7:
-                return daysOfWeekText[6];
-
-            default:
-                return "";
-        }
     }
 
     public static GenericRequestBuilder<Uri, InputStream, SVG,

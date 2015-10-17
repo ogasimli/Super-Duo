@@ -14,7 +14,7 @@ import android.util.Log;
 import java.util.Arrays;
 
 /**
- * Created by yehya khaled on 2/25/2015.
+ * Database content provider class
  */
 public class ScoresProvider extends ContentProvider {
 
@@ -24,11 +24,11 @@ public class ScoresProvider extends ContentProvider {
 
     //Uris
     public static final Uri TEAMS_URI =
-            DbContract.BASE_CONTENT_URI.buildUpon().appendPath("teams").build();
+            ScoresContract.BASE_CONTENT_URI.buildUpon().appendPath("teams").build();
     public static final Uri FIXTURES_URI =
-            DbContract.BASE_CONTENT_URI.buildUpon().appendPath("fixtures").build();
+            ScoresContract.BASE_CONTENT_URI.buildUpon().appendPath("fixtures").build();
     public static final Uri FIXTURES_AND_TEAMS_URI =
-            DbContract.BASE_CONTENT_URI.buildUpon().appendPath("fixtures_teams").build();
+            ScoresContract.BASE_CONTENT_URI.buildUpon().appendPath("fixtures_teams").build();
 
     //Uri codes
     private static final int TEAMS_URI_CODE = 100;
@@ -45,7 +45,7 @@ public class ScoresProvider extends ContentProvider {
     private final UriMatcher mUriMatcher = buildUriMatcher();
     private static UriMatcher buildUriMatcher() {
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
-        final String authority = DbContract.CONTENT_AUTHORITY;
+        final String authority = ScoresContract.CONTENT_AUTHORITY;
         matcher.addURI(authority, "teams" , TEAMS_URI_CODE);
         matcher.addURI(authority, "fixtures" , FIXTURES_URI_CODE);
         matcher.addURI(authority, "fixtures_teams" , FIXTURES_AND_TEAMS_URI_CODE);
@@ -66,20 +66,20 @@ public class ScoresProvider extends ContentProvider {
         final int match = mUriMatcher.match(uri);
         switch (match) {
             case TEAMS_URI_CODE:
-                Log.d(LOG_TAG, DbContract.TEAMS_TABLE);
-                cursor = db.query(DbContract.TEAMS_TABLE, projection, selection,
+                Log.d(LOG_TAG, ScoresContract.TEAMS_TABLE);
+                cursor = db.query(ScoresContract.TEAMS_TABLE, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
             case FIXTURES_URI_CODE:
-                Log.d(LOG_TAG, DbContract.FIXTURES_TABLE);
-                cursor = db.query(DbContract.FIXTURES_TABLE, projection, selection,
+                Log.d(LOG_TAG, ScoresContract.FIXTURES_TABLE);
+                cursor = db.query(ScoresContract.FIXTURES_TABLE, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
             case FIXTURES_AND_TEAMS_URI_CODE:
-                Log.d(LOG_TAG, DbContract.FIXTURES_TEAMS_VIEW);
-                cursor = db.query(DbContract.FIXTURES_TEAMS_VIEW, projection, selection,
+                Log.d(LOG_TAG, ScoresContract.FIXTURES_TEAMS_VIEW);
+                cursor = db.query(ScoresContract.FIXTURES_TEAMS_VIEW, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
@@ -112,11 +112,11 @@ public class ScoresProvider extends ContentProvider {
 
         switch (match) {
             case TEAMS_URI_CODE:
-                rowId = db.insertWithOnConflict(DbContract.TEAMS_TABLE, null, contentValues,
+                rowId = db.insertWithOnConflict(ScoresContract.TEAMS_TABLE, null, contentValues,
                         SQLiteDatabase.CONFLICT_REPLACE);
                 break;
             case FIXTURES_URI_CODE:
-                rowId = db.insertWithOnConflict(DbContract.FIXTURES_TABLE, null, contentValues,
+                rowId = db.insertWithOnConflict(ScoresContract.FIXTURES_TABLE, null, contentValues,
                         SQLiteDatabase.CONFLICT_REPLACE);
                 break;
             default:

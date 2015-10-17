@@ -9,4 +9,4 @@
         android:textColor="@color/color_secondary_text"
         android:drawableTop="@drawable/ic_no_fixtures_for_day"
         android:drawablePadding="@dimen/error_view_padding"
-        android:contentDescription="@string/description_no_fixtures_for_day"/>
+        android:contentDescription="@string/no_fixtures_for_day"/>

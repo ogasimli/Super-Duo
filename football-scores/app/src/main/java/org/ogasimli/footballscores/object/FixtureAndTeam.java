@@ -3,7 +3,7 @@ package org.ogasimli.footballscores.object;
 import android.database.Cursor;
 
 /**
- * Created by com.ogasimli on 11.10.2015.
+ * Object class for holding fixtures and team information
  */
 public class FixtureAndTeam {
 
@@ -49,7 +49,7 @@ public class FixtureAndTeam {
 
         //Fixture
         fixtureAndTeam.matchId = cursor.getString(1);
-        fixtureAndTeam.matchTime = cursor.getString(2);
+        fixtureAndTeam.matchTime = cursor.getString(2).substring(0,5);
 
         //Home Team
         fixtureAndTeam.homeTeamId = cursor.getString(3);
