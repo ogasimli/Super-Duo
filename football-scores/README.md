@@ -3,7 +3,7 @@
 Football Scores uses [football-data API](http://api.football-data.org/index) to retrieve match data.
 In order to be able to launch the app you have to get a valid API key from football-data.org and add the following line to your gradle.properties file:
 
-APIKey=YOUR_API_KEY
+API_KEY=YOUR_API_KEY
 
 After that just replace YOUR_API_KEY with valid API key, obtained from football-data.org.
 
@@ -17,7 +17,7 @@ After that just replace YOUR_API_KEY with valid API key, obtained from football-
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: ../screenshots/nanodegree.png
+[1]: ../master/football-scores/screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
