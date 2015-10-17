@@ -17,7 +17,7 @@ After that just replace YOUR_API_KEY with valid API key, obtained from football-
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: ../tree/master/football-scores/screenshots/nanodegree.png
+[1]: ../blob/master/football-scores/screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
