@@ -29,9 +29,9 @@ Before:
 
 After:
 
-![screen](../blob/master/alexandria/screenshots/main_new.png)
+![screen](../screenshots/main_new.png)
 
-![screen](../blob/master/alexandria/screenshots/detail_new.png)
+![screen](../screenshots/detail_new.png)
 
 ## Libraries Used
 
@@ -44,7 +44,7 @@ After:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: https://github.com/ogasimli/Udacity-SuperDuo/blob/master/alexandria/screenshots/nanodegree.png
+[1]: ../screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
