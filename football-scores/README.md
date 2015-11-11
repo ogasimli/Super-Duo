@@ -23,13 +23,13 @@ After that just replace YOUR_API_KEY with valid API key, obtained from football-
 
 Before:
 
-![screen](../master/football-scores/screenshots/main_old.png)
+![screen](../blob/master/football-scores/screenshots/main_old.png)
 
 After:
 
-![screen](../master/football-scores/screenshots/main_new.png)
+![screen](../blob/master/football-scores/screenshots/main_new.png)
 
-![screen](../master/football-scores/screenshots/widget_new.png)
+![screen](../blob/master/football-scores/screenshots/widget_new.png)
 
 ## Libraries Used
 
@@ -45,7 +45,7 @@ After:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: https://github.com/ogasimli/Udacity-SuperDuo/tree/master/alexandria/screenshots/nanodegree.png
+[1]: https://github.com/ogasimli/Udacity-SuperDuo/blob/master/alexandria/screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
