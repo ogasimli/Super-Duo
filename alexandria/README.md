@@ -1,5 +1,5 @@
 # Booklet (Alexandria)
-A book list and barcode scanner app developed by XXX and improved by me for the third stage of Android Nanodegree Program.
+A book list and barcode scanner app developed by Sascha Jaschke and improved by me for the third stage of Android Nanodegree Program.
 
 Booklet was evaluated and graded as "Exceeds Specifications" by certified Udacity code reviewer.
 
@@ -23,15 +23,15 @@ After that just replace YOUR_API_KEY with valid API key, obtained from The Movie
 
 Before:
 
-![screen](../master/screenshots/main_old.png)
+![screen](../master/alexandria/screenshots/main_old.png)
 
-![screen](../master/screenshots/detail_old.png)
+![screen](../master/alexandria/screenshots/detail_old.png)
 
 After:
 
-![screen](../master/screenshots/main_new.png)
+![screen](../master/alexandria/screenshots/main_new.png)
 
-![screen](../master/screenshots/detail_new.png)
+![screen](../master/alexandria/screenshots/detail_new.png)
 
 ## Libraries Used
 
@@ -44,7 +44,7 @@ After:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: ../master/screenshots/nanodegree.png
+[1]: https://github.com/ogasimli/Udacity-SuperDuo/tree/master/alexandria/screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License

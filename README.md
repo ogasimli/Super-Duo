@@ -31,7 +31,7 @@ During this project, I:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: ../master/screenshots/nanodegree.png
+[1]: https://github.com/ogasimli/Udacity-SuperDuo/tree/master/alexandria/screenshots
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License

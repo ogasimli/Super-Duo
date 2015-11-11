@@ -1,5 +1,5 @@
 # Football Scores
-An app that tracks current and future football matches. App was initially developed by XXX and improved by me for the third stage of Android Nanodegree Program.
+An app that tracks current and future football matches. App was initially developed by Yahya Khalid Ibn El Walid and improved by me for the third stage of Android Nanodegree Program.
 
 Football Scores was evaluated and graded as "Exceeds Specifications" by certified Udacity code reviewer.
 
@@ -23,13 +23,13 @@ After that just replace YOUR_API_KEY with valid API key, obtained from football-
 
 Before:
 
-![screen](../master/screenshots/main_old.png)
+![screen](../master/football-scores/screenshots/main_old.png)
 
 After:
 
-![screen](../master/screenshots/main_new.png)
+![screen](../master/football-scores/screenshots/main_new.png)
 
-![screen](../master/screenshots/widget_new.png)
+![screen](../master/football-scores/screenshots/widget_new.png)
 
 ## Libraries Used
 
@@ -45,7 +45,7 @@ After:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: https://github.com/ogasimli/Super-Duo/blob/master/football-scores/screenshots/nanodegree.png
+[1]: https://github.com/ogasimli/Udacity-SuperDuo/tree/master/alexandria/screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
