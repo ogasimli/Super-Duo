@@ -23,15 +23,15 @@ After that just replace YOUR_API_KEY with valid API key, obtained from The Movie
 
 Before:
 
-![screen](../blob/master/alexandria/screenshots/main_old.png)
+![screen](screenshots/main_old.png)
 
-![screen](../blob/master/alexandria/screenshots/detail_old.png)
+![screen](screenshots/detail_old.png)
 
 After:
 
-![screen](../screenshots/main_new.png)
+![screen](screenshots/main_new.png)
 
-![screen](../screenshots/detail_new.png)
+![screen](screenshots/detail_new.png)
 
 ## Libraries Used
 
@@ -44,7 +44,7 @@ After:
 ## Android Developer Nanodegree
 [![udacity][1]][2]
 
-[1]: ../screenshots/nanodegree.png
+[1]: screenshots/nanodegree.png
 [2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
 ## License
